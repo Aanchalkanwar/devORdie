@@ -1,0 +1,17 @@
+langchain
+langchain-community
+openai
+python-dotenv
+fastapi
+uvicorn
+
+langchain-anthropic
+
+langchain-google-genai
+google-generativeai
+
+pydantic
+
+langchain-huggingface
+transformers
+huggingface-hub
