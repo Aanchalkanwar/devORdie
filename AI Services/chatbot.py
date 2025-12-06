@@ -11,8 +11,8 @@ load_dotenv()
 api_key = os.getenv("HUGGINGFACEHUB_ACCESS_TOKEN")
 
 llm = HuggingFaceEndpoint(
-    repo_id="openai/gpt-oss-20b",
-    task="text-generation"
+    repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
+    huggingfacehub_api_token=api_key
 )
 
 model = ChatHuggingFace(
@@ -27,5 +27,5 @@ class Query(BaseModel):
 
 @app.post("/chat")
 def chat_with_bot(query: Query):
-    response = model([HumanMessage(content=query.message)])
+    response = model.invoke([HumanMessage(content=query.message)])
     return {"reply": response.content}
