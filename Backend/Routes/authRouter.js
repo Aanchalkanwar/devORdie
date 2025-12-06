@@ -5,12 +5,12 @@ const router = express.Router();
 const { 
     register,
     login 
-} = require('../controllers/authController');
+} = require('../controller/authController');
 
 const { 
     signupValidation,
     loginValidation 
-} = require('../middlewares/authValidation');
+} = require('../middleware/authValidation');
 
 // Note: The route is '/signup', but it uses your 'register' function. This is perfectly fine.
 router.post('/signup', signupValidation, register);

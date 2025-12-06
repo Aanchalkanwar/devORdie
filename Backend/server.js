@@ -17,9 +17,6 @@ const medicationRoutes = require('./Routes/medicationRoutes');
 const userRoutes = require('./routes/userRoutes');
 const doseRoutes = require('./routes/doseRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
-const chatRoutes = require('./Routes/chatRoutes');
-const startNotificationScheduler = require('./services/notificationService');
-const moment = require('moment-timezone');
 
 // Connect to MongoDB
 // mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:8080/medtrack', {
@@ -36,7 +33,6 @@ app.use('/api/medications', medicationRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/doses', doseRoutes);
 app.use('/api/dashboard', dashboardRoutes);
-app.use('/api/chat', chatRoutes);
 
 // Health check endpoint
 app.get('/', (req, res) => {
@@ -56,5 +52,5 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
-    startNotificationScheduler();
+    //startNotificationScheduler();
 });

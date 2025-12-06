@@ -2,13 +2,13 @@
 
 const express = require('express');
 const router = express.Router();
-const authMiddleware = require('../middlewares/authMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
 // Import controller functions
 const {
     logDose,
     getDoseStats
-} = require('../controllers/doseController');
+} = require('../controller/doseController');
 
 // Protect all routes in this file
 router.use(authMiddleware);

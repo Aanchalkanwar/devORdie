@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const authMiddleware = require('../middlewares/authMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const {
     createMedication,
@@ -9,7 +9,7 @@ const {
     deleteMedication,
     recordMedicineTaken,
     getMedicineHistory
-} = require('../controllers/medicationController');
+} = require('../controller/medicationController');
 
 router.use(authMiddleware);
 
